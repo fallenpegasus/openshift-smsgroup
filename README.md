@@ -33,20 +33,20 @@ Quickstart
 
     4.  Edit the twilio_creds file, and set the account, token, and fromnum.
 
-        # change these to your Twilio account credentials
-        twilio_account = "ACyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
-        twilio_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        twilio_fromnum = "+12024561414"
+            # change these to your Twilio account credentials
+            twilio_account = "ACyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+            twilio_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            twilio_fromnum = "+12024561414"
 
     5.  And then commit those changes to Git.
 
-        git add twilio_creds
-        git commit -m "set twilio creds"
-        # after you have done this, you MUST not push this repo to a public Git server!
+            git add twilio_creds
+            git commit -m "set twilio creds"
+            # after you have done this, you MUST not push this repo to a public Git server!
 
 5.  Then push the repo into OpenShift.
 
-        git push
+            git push
 
 6.  Now attach this app to Twilio.
 
