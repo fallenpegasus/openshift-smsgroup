@@ -8,65 +8,65 @@ It uses the OpenShift Python-2.6 language cartridge, the OpenShift MongoDB-2.0 d
 Quickstart
 ==========
 
-1. Create an account at http://openshift.redhat.com/ and then install the rhc client tool.
+1.  Create an account at http://openshift.redhat.com/ and then install the rhc client tool.
 
-2. Create a python application and attach mongodb to it.
+2.  Create a Python application and attach a MongoDB to it.
 
-    rhc app create -a smsgroup -t python-2.6
-    rhc app cartridge add -a smsgroup -c mongodb-2.0
+        rhc app create -a smsgroup -t python-2.6
+        rhc app cartridge add -a smsgroup -c mongodb-2.0
 
-3. Add this upstream repo.
+3.  Add this upstream repo.
 
-    cd smsgroup
-    git remote add upstream -m master git://github.com/fallenpegasus/openshift-smsgroup.git
-    git pull -s recursive -X theirs upstream master
+        cd smsgroup
+        git remote add upstream -m master git://github.com/fallenpegasus/openshift-smsgroup.git
+        git pull -s recursive -X theirs upstream master
 
-4. Add your Twilio credentials and information.
+4.  Add your Twilio credentials and information.
 
-Log in to your Twilio.com account
+    Log in to your Twilio.com account
 
-Browse to https://www.twilio.com/user/account to get the "Account SID" and the "Auth Token"
+    Browse to https://www.twilio.com/user/account to get the "Account SID" and the "Auth Token"
 
-Browse to https://www.twilio.com/user/account/phone-numbers/incoming and click "Buy a Number". Go through the process.
+    Browse to https://www.twilio.com/user/account/phone-numbers/incoming and click "Buy a Number". Go through the process.
 
-Edit the twilio_creds file, and set the account, token, and fromnum.  
+    Edit the twilio_creds file, and set the account, token, and fromnum.
 
-    # change these to your Twilio account credentials
-    twilio_account = "ACyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
-    twilio_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    twilio_fromnum = "+12024561414"
+        # change these to your Twilio account credentials
+        twilio_account = "ACyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+        twilio_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        twilio_fromnum = "+12024561414"
 
-And then commit those changes to Git
+    And then commit those changes to Git
 
-    git add twilio_creds
-    git commit -m "set twilio creds"
-    # after you have done this, you MUST not push this repo to a public Git server!
+        git add twilio_creds
+        git commit -m "set twilio creds"
+        # after you have done this, you MUST not push this repo to a public Git server!
 
-5. Then push the repo into OpenShift
+5.  Then push the repo into OpenShift
 
-    git push
+        git push
 
-6. Now attach this app to Twilio
+6.  Now attach this app to Twilio
 
-Browse to https://www.twilio.com/user/account/apps
+    Browse to https://www.twilio.com/user/account/apps
 
-Click on "Create TwiML App"
+    Click on "Create TwiML App"
 
-Set the Friendly Name to openshift-smsgroup
+    Set the Friendly Name to openshift-smsgroup
 
-Set the SMS Request URL to http://smsgroup-mynamespace.rhcloud.com/twilio/sms (Remember to change "mynamespace" to your own OpenShift namespace.)
+    Set the SMS Request URL to http://smsgroup-mynamespace.rhcloud.com/twilio/sms (Remember to change "mynamespace" to your own OpenShift namespace.)
 
-Set the SMS Request URL Schem from "POST" to "GET"
+    Set the SMS Request URL Schem from "POST" to "GET"
 
-Click on "Save Changes"
+    Click on "Save Changes"
 
-Browse to https://www.twilio.com/user/account/phone-numbers/incoming
+    Browse to https://www.twilio.com/user/account/phone-numbers/incoming
 
-Click on the number you just bought
+    Click on the number you just bought
 
-Set the SMS Application to "openshift-smsgroup"
+    Set the SMS Application to "openshift-smsgroup"
 
-Click on "Save Changes"
+    Click on "Save Changes"
 
 7. That's it, you can use you SMS Group!
 
@@ -89,8 +89,7 @@ Costs
 
 If you use a US NANP number, with no international messaging, Twilio will charge you USD1.00/month for the phone number, and USD0.01 per SMS sent and received.
 
-For example, if you have ten people in the group, it will cost eleven cents every time someone sends it a message. One cent for the incoming.  And one cent for each of the ten outgoing messages. 
-This is in addition to whatever your cellphone carriers are charging for texting.
+For example, if you have ten people in the group, it will cost eleven cents every time someone sends it a message. One cent for the incoming.  And one cent for each of the ten outgoing messages.This is in addition to whatever your cellphone carriers are charging for texting.
 
 
 MongoDB
