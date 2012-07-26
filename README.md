@@ -2,7 +2,7 @@ OpenShift SMSGroup QuickStart
 
 This repository is a quickstart for the SMSGroup application.
 
-It uses OpenShift Python-2.6 language cartridge, the OpenShift MongoDB-2.0 database cartridge, and requires the API credentials of a Twilio account.
+It uses the OpenShift Python-2.6 language cartridge, the OpenShift MongoDB-2.0 database cartridge, and requires the API credentials of a Twilio account.
 
 
 Quickstart
@@ -23,20 +23,20 @@ Quickstart
 
 4. Add your Twilio credentials and information.
 
-a. Log in to your Twilio.com account
+Log in to your Twilio.com account
 
-b. Browse to https://www.twilio.com/user/account to get the "Account SID" and the "Auth Token"
+Browse to https://www.twilio.com/user/account to get the "Account SID" and the "Auth Token"
 
-c. Browse to https://www.twilio.com/user/account/phone-numbers/incoming and click "Buy a Number". Go through the process.
+Browse to https://www.twilio.com/user/account/phone-numbers/incoming and click "Buy a Number". Go through the process.
 
-d. Edit the twilio_creds file, and set the account, token, and fromnum
-
-    vi twilio_creds
+Edit the twilio_creds file, and set the account, token, and fromnum.  
 
     # change these to your Twilio account credentials
     twilio_account = "ACyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
     twilio_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     twilio_fromnum = "+12024561414"
+
+And then commit those changes to Git
 
     git add twilio_creds
     git commit -m "set twilio creds"
@@ -48,25 +48,25 @@ d. Edit the twilio_creds file, and set the account, token, and fromnum
 
 6. Now attach this app to Twilio
 
-a. Browse to https://www.twilio.com/user/account/apps
+Browse to https://www.twilio.com/user/account/apps
 
-b. Click on "Create TwiML App"
+Click on "Create TwiML App"
 
-c. Set the Friendly Name to openshift-smsgroup
+Set the Friendly Name to openshift-smsgroup
 
-d. Set the SMS Request URL to http://smsgroup-mynamespace.rhcloud.com/twilio/sms (Remember to change "mynamespace" to your own OpenShift namespace.)
+Set the SMS Request URL to http://smsgroup-mynamespace.rhcloud.com/twilio/sms (Remember to change "mynamespace" to your own OpenShift namespace.)
 
-e. Set the SMS Request URL Schem from "POST" to "GET"
+Set the SMS Request URL Schem from "POST" to "GET"
 
-f. Click on "Save Changes"
+Click on "Save Changes"
 
-g. Browse to https://www.twilio.com/user/account/phone-numbers/incoming
+Browse to https://www.twilio.com/user/account/phone-numbers/incoming
 
-h. Click on the number you just bought
+Click on the number you just bought
 
-i. Set the SMS Application to "openshift-smsgroup"
+Set the SMS Application to "openshift-smsgroup"
 
-j. Click on "Save Changes"
+Click on "Save Changes"
 
 7. That's it, you can use you SMS Group!
 
@@ -89,9 +89,8 @@ Costs
 
 If you use a US NANP number, with no international messaging, Twilio will charge you USD1.00/month for the phone number, and USD0.01 per SMS sent and received.
 
-For example, if you have ten people in the group, it will cost 11 cents every time someone sends it a message. One cent for the incoming.  And one cent for each of the ten outgoing messages. 
-
-This is in addition to whatever your cellphone carriers are charging for your texting plan.
+For example, if you have ten people in the group, it will cost eleven cents every time someone sends it a message. One cent for the incoming.  And one cent for each of the ten outgoing messages. 
+This is in addition to whatever your cellphone carriers are charging for texting.
 
 
 MongoDB
