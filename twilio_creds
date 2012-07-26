@@ -1,0 +1,5 @@
+# change these to your Twilio account credentials
+twilio_account = "ACyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+twilio_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+twilio_fromnum = "+12024561414"
+
