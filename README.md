@@ -101,7 +101,7 @@ MongoDB
 
 You can access the MonogDB instance by either installing the RockMongo 1.1 cartridge, or by ssh'ing into the application gear, and then running the "mongo" command on the command line.
 
-    ssh 440a01df1a1b4766967198ed73e67c86@smsgroup-matwood.rhcloud.com
+    ssh 440a01df1a1b4766967198ed73e67c86@smsgroup-random.rhcloud.com
     [smsgroup-matwood.rhcloud.com ~]\> mongo
     MongoDB shell version: 2.0.2
     connecting to: 127.11.100.129:27017/admin
@@ -128,10 +128,10 @@ If you want to implement any of these, please fork this project here on GitHub, 
 
 * Members should be able to set their name when they join.
 
-* I wish that Twilio had an interface to the CNAM database.
-
 * Messages should be prefixed with the name and/or number that orginated them.
 
 * The ".join" and ".leave" commands should not be case sensitive.
 
 * The sendq should sort messages so they are not sent out of order.
+
+* Authenticate the REST call so we know it's not some joker with curl calling us, or someone who configured their own Twilio account to call our own running instance.
