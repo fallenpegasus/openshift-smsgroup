@@ -1,6 +1,6 @@
 # OpenShift QuickStart SMSGroup
 
-This repository is an OpenSHift QuickStart for the SMSGroup application.
+This repository is an OpenShift QuickStart for the SMSGroup application.
 
 It uses the OpenShift Python-2.6 language cartridge, the OpenShift MongoDB-2.0 database cartridge, and requires the API credentials of a Twilio account.
 
@@ -36,7 +36,7 @@ Quickstart
             # change these to your Twilio account credentials
             twilio_account = "ACyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
             twilio_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            twilio_fromnum = "+12024561414"
+            twilio_fromnum = "+xxxxxxxxxxx"
 
     5.  And then commit those changes to Git.
 
@@ -83,7 +83,7 @@ Using your SMS Group
 
 * To send a message to the group, just SMS the message to the phone number. It will be broadcast to everyone who's joined.
 
-* You do not have to be a member of the group to send a message to it.
+* If you send a message and you are not joined, it will join you.
 
 * A limitation imposed by Twilio is that SMSs are sending rate limited to one per second.
 
@@ -101,7 +101,7 @@ MongoDB
 
 You can access the MonogDB instance by either installing the RockMongo 1.1 cartridge, or by ssh'ing into the application gear, and then running the "mongo" command on the command line.
 
-    ssh 440a01df1a1b4766967198ed73e67c86@smsgroup-random.rhcloud.com
+    ssh 440a01df1a1b4766967198ed73e67c86@smsgroup-mynamespace.rhcloud.com
     [smsgroup-matwood.rhcloud.com ~]\> mongo
     MongoDB shell version: 2.0.2
     connecting to: 127.11.100.129:27017/admin
@@ -133,5 +133,3 @@ If you want to implement any of these, please fork this project here on GitHub, 
 * The ".join" and ".leave" commands should not be case sensitive.
 
 * The sendq should sort messages so they are not sent out of order.
-
-* Authenticate the REST call so we know it's not some joker with curl calling us, or someone who configured their own Twilio account to call our own running instance.
